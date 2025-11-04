@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Evolução do Capitalismo: Do 1.0 ao 4.0</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .info-box {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .info-box p {
+            margin: 5px 0;
+            font-size: 0.95em;
+        }
+
+        nav {
+            background: #f8f9fa;
+            padding: 20px 40px;
+            border-bottom: 3px solid #667eea;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 60px;
+            scroll-margin-top: 80px;
+        }
+
+        h2 {
+            color: #1e3c72;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        h3 {
+            color: #2a5298;
+            font-size: 1.5em;
+            margin: 30px 0 15px 0;
+        }
+
+        .fase-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .fase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .fase-1 { border-left: 8px solid #e74c3c; }
+        .fase-2 { border-left: 8px solid #3498db; }
+        .fase-3 { border-left: 8px solid #2ecc71; }
+        .fase-4 { border-left: 8px solid #9b59b6; }
+
+        .fase-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .fase-icon {
+            font-size: 3em;
+        }
+
+        .fase-title {
+            flex: 1;
+        }
+
+        .fase-title h3 {
+            margin: 0;
+            color: #1e3c72;
+        }
+
+        .fase-title p {
+            font-style: italic;
+            color: #666;
+            margin: 5px 0 0 0;
+        }
+
+        .caracteristicas {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .caracteristicas ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .caracteristicas li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .caracteristicas li:before {
+            content: "▸";
+            position: absolute;
+            left: 10px;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .exemplo {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .exemplo strong {
+            color: #856404;
+        }
+
+        .tabela-comparativa {
+            overflow-x: auto;
+            margin: 30px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .atividade {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .atividade h4 {
+            color: #d63031;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+            margin: 10px 5px;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .recursos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .recurso-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-top: 4px solid #667eea;
+        }
+
+        .recurso-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .recurso-card h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .recurso-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .recurso-card li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .recurso-card li:last-child {
+            border-bottom: none;
+        }
+
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        .destaque {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .destaque h3 {
+            color: #d63031;
+            margin-top: 0;
+        }
+
+        .destaque p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        blockquote {
+            background: #f8f9fa;
+            border-left: 5px solid #667eea;
+            padding: 20px 30px;
+            margin: 25px 0;
+            font-style: italic;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .consideracoes {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .consideracoes h3 {
+            color: #d63031;
+            margin-top: 0;
+        }
+
+        .consideracoes ol {
+            margin: 20px 0;
+            padding-left: 25px;
+        }
+
+        .consideracoes li {
+            margin: 15px 0;
+            font-size: 1.05em;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            nav {
+                padding: 15px 20px;
+            }
+
+            .fase-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            table {
+                font-size: 0.85em;
+            }
+
+            .recursos {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #667eea;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            opacity: 0;
+            pointer-events: none;
+            font-size: 1.5em;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            background: #764ba2;
+        }
+
+        .intro-content {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .intro-content ul {
+            list-style: none;
+            padding: 20px 0;
+        }
+
+        .intro-content li {
+            padding: 12px;
+            margin: 8px 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 A EVOLUÇÃO HISTÓRICA DO CAPITALISMO</h1>
+            <p>Do 1.0 ao 4.0: Uma Viagem no Tempo Através das Grandes Transformações Econômicas</p>
+            <div class="info-box">
+                <p><strong>Público-Alvo:</strong> Calouros Universitários</p>
+                <p><strong>Duração:</strong> 60-70 minutos</p>
+                <p><strong>Objetivo:</strong> Compreender o capitalismo como sistema vivo e em constante metamorfose</p>
+            </div>
+        </header>
+
+        <nav>
+            <a href="#introducao">Introdução</a>
+            <a href="#cap1">Capitalismo 1.0</a>
+            <a href="#cap2">Capitalismo 2.0</a>
+            <a href="#cap3">Capitalismo 3.0</a>
+            <a href="#cap4">Capitalismo 4.0</a>
+            <a href="#sintese">Síntese</a>
+            <a href="#atividades">Atividades</a>
+            <a href="#recursos">Recursos</a>
+        </nav>
+
+        <div class="content">
+            <section id="introducao">
+                <h2>🎬 Abertura Impactante: O Paradoxo do Presente</h2>
+                
+                <div class="intro-content">
+                    <p><strong>Quiz Provocativo Inicial:</strong></p>
+                    <ul>
+                        <li>✓ Quantos de vocês já pediram comida por aplicativo esta semana?</li>
+                        <li>✓ Quem aqui tem parente que trabalhou 30 anos na mesma empresa?</li>
+                        <li>✓ Alguém já comprou algo porque viu um anúncio personalizado no Instagram?</li>
+                    </ul>
+                </div>
+                
+                <blockquote>
+                    "Vocês e seus avós vivem sob o MESMO sistema econômico - o capitalismo. Como isso é possível? É como se seus avós jogassem videogame no Atari e vocês no PlayStation 5. Mesmo conceito, mas jogos completamente diferentes."
+                </blockquote>
+
+                <p style="font-size: 1.1em; margin-top: 20px;">Hoje vamos hackear a Matrix e entender as <strong>4 grandes atualizações</strong> do sistema operacional capitalista. Preparem-se para ver o mundo com novos olhos!</p>
+            </section>
+
+            <section id="cap1">
+                <h2>📚 A Grande Jornada: As Quatro Revoluções</h2>
+                
+                <div class="fase-card fase-1">
+                    <div class="fase-header">
+                        <div class="fase-icon">🏭</div>
+                        <div class="fase-title">
+                            <h3>CAPITALISMO 1.0: A ERA DA FUMAÇA E DO FERRO</h3>
+                            <p>"Quando o Tempo Virou Dinheiro" (1760 - 1870)</p>
+                        </div>
+                    </div>
+
+                    <p><strong>Storytelling:</strong> Imaginem: Londres, 1820. Um garoto de 8 anos acorda às 5h da manhã. Não para ir à escola - para trabalhar 14 horas numa fábrica têxtil. O barulho é ensurdecedor. O ar, sufocante. Mas algo extraordinário está acontecendo: pela primeira vez na história humana, <strong>o trabalho se separa completamente da terra</strong>. A fábrica nasce.</p>
+
+                    <div class="caracteristicas">
+                        <h4>🔑 Características-Chave:</h4>
+                        <ul>
+                            <li><strong>Motor Tecnológico:</strong> Máquina a vapor, tear mecânico, carvão</li>
+                            <li><strong>Lógica Dominante:</strong> "TEMPO = DINHEIRO"</li>
+                            <li><strong>Organização:</strong> Do artesão independente ao operário assalariado</li>
+                            <li><strong>Propriedade:</strong> Familiar - o patrão conhece seus operários</li>
+                            <li><strong>Pensador Ícone:</strong> Adam Smith - "A mão invisível do mercado"</li>
+                        </ul>
+                    </div>
+
+                    <div class="exemplo">
+                        <strong>💡 Exemplo Vivo:</strong> Uma fábrica de Manchester produz tecidos. O dono mora ao lado. Conhece os trabalhadores pelo nome. Tudo acontece no mesmo lugar: produção, venda, vida social.
+                    </div>
+
+                    <p style="margin-top: 20px;"><strong>Fórmula de Lucro:</strong></p>
+                    <p style="background: white; padding: 15px; border-radius: 10px; text-align: center; font-family: monospace; font-weight: bold;">
+                        Matéria-Prima + Trabalho Explorado + Máquina = Produto Físico
+                    </p>
+                </div>
+            </section>
+
+            <section id="cap2">
+                <div class="fase-card fase-2">
+                    <div class="fase-header">
+                        <div class="fase-icon">🏢</div>
+                        <div class="fase-title">
+                            <h3>CAPITALISMO 2.0: A ERA DOS GIGANTES</h3>
+                            <p>"Quando a Empresa Virou Máquina" (1870 - 1970)</p>
+                        </div>
+                    </div>
+
+                    <p><strong>Storytelling:</strong> 1920. Henry Ford tem uma ideia diabólica de tão genial: <strong>"E se o produto se movesse e o trabalhador ficasse parado?"</strong> Nasce a linha de montagem. Mas nasce algo ainda mais poderoso: a corporação moderna.</p>
+
+                    <div class="caracteristicas">
+                        <h4>🔑 Características-Chave:</h4>
+                        <ul>
+                            <li><strong>Motor Tecnológico:</strong> Eletricidade, petróleo, motor de combustão</li>
+                            <li><strong>Lógica Dominante:</strong> "ORGANIZAÇÃO = PODER"</li>
+                            <li><strong>Separação Radical:</strong> Quem possui ≠ quem gerencia (surgem os executivos)</li>
+                            <li><strong>Inovação:</strong> Produção em massa + Consumo de massa</li>
+                            <li><strong>Pensador Ícone:</strong> John Maynard Keynes - Intervenção estatal</li>
+                        </ul>
+                    </div>
+
+                    <div class="exemplo">
+                        <strong>💡 Exemplo Vivo:</strong> A General Motors em 1960: 600 mil empregados, cidade-empresa (Flint, Michigan), emprego vitalício, aposentadoria garantida. Um trabalhador poderia comprar casa, carro e sustentar família com um salário. A "Era de Ouro" do capitalismo.
+                    </div>
+
+                    <p style="margin-top: 20px;"><strong>Fórmula de Lucro:</strong></p>
+                    <p style="background: white; padding: 15px; border-radius: 10px; text-align: center; font-family: monospace; font-weight: bold;">
+                        Capital Financeiro + Escala Industrial + Consumo de Massa = Império Corporativo
+                    </p>
+
+                    <blockquote>
+                        "O trabalhador vira CONSUMIDOR. Ford pagava US$ 5/dia (2x o mercado) para criar seu próprio mercado consumidor!"
+                    </blockquote>
+                </div>
+            </section>
+
+            <section id="cap3">
+                <div class="fase-card fase-3">
+                    <div class="fase-header">
+                        <div class="fase-icon">🌐</div>
+                        <div class="fase-title">
+                            <h3>CAPITALISMO 3.0: A ERA DOS FLUXOS</h3>
+                            <p>"Quando o Mundo Virou Plano" (1980 - 2010)</p>
+                        </div>
+                    </div>
+
+                    <p><strong>Atividade Inicial:</strong> Peguem seus celulares. Vejam onde foram fabricados. Agora vejam de onde vieram os componentes...</p>
+
+                    <div class="caracteristicas">
+                        <h4>🔑 Características-Chave:</h4>
+                        <ul>
+                            <li><strong>Motor Tecnológico:</strong> Computadores, internet, contêineres, fibra ótica</li>
+                            <li><strong>Lógica Dominante:</strong> "FLEXIBILIDADE = COMPETITIVIDADE"</li>
+                            <li><strong>Deslocalização:</strong> Produzir onde for mais barato</li>
+                            <li><strong>Financeirização:</strong> "Fazer dinheiro com dinheiro"</li>
+                            <li><strong>Pensador Ícone:</strong> Milton Friedman - Liberalismo radical</li>
+                        </ul>
+                    </div>
+
+                    <div class="exemplo">
+                        <strong>💡 Exemplo Vivo:</strong> Seu iPhone: projetado na Califórnia, chips da Coreia do Sul, montagem na China (Foxconn), minerais do Congo, vendido globalmente, lucros em paraísos fiscais. Nenhum trabalhador da Apple efetivamente "faz" um iPhone. A empresa <strong>coordena</strong> uma rede global.
+                    </div>
+
+                    <p style="margin-top: 20px;"><strong>Fórmula de Lucro:</strong></p>
+                    <p style="background: white; padding: 15px; border-radius: 10px; text-align: center; font-family: monospace; font-weight: bold;">
+                        Capital Financeiro Volátil + Terceirização Global + Especulação = Lucro Instantâneo
+                    </p>
+                </div>
+            </section>
+
+            <section id="cap4">
+                <div class="fase-card fase-4">
+                    <div class="fase-header">
+                        <div class="fase-icon">📱</div>
+                        <div class="fase-title">
+                            <h3>CAPITALISMO 4.0: A ERA DA VIGILÂNCIA</h3>
+                            <p>"Quando VOCÊ Virou o Produto" (2010 - Presente)</p>
+                        </div>
+                    </div>
+
+                    <p><strong>Experimento Social:</strong> Abram o Instagram agora. Rolem o feed. Percebam quantos anúncios aparecem. Agora, a pergunta de US$ 1 trilhão: <strong>vocês estão usando o Instagram ou o Instagram está usando vocês?</strong></p>
+
+                    <div class="caracteristicas">
+                        <h4>🔑 Características-Chave:</h4>
+                        <ul>
+                            <li><strong>Motor Tecnológico:</strong> IA, Big Data, algoritmos, nuvem, smartphones</li>
+                            <li><strong>Lógica Dominante:</strong> "DADOS = O NOVO PETRÓLEO"</li>
+                            <li><strong>Modelo de Negócio:</strong> Plataformas digitais, efeito de rede</li>
+                            <li><strong>Capitalismo de Vigilância:</strong> Previsão e modificação do comportamento</li>
+                            <li><strong>Pensadora Ícone:</strong> Shoshana Zuboff - "A Era do Capitalismo de Vigilância"</li>
+                        </ul>
+                    </div>
+
+                    <div class="exemplo">
+                        <strong>💡 Exemplo Vivo:</strong> Você busca "tênis de corrida" no Google às 10h. Às 11h, anúncios de tênis no Instagram. Às 14h, um YouTuber que você segue fala de tênis. Às 18h, promoção na Amazon. Coincidência? Não. Você está sendo orquestrado.
+                    </div>
+
+                    <p style="margin-top: 20px;"><strong>Fórmula de Lucro:</strong></p>
+                    <p style="background: white; padding: 15px; border-radius: 10px; text-align: center; font-family: monospace; font-weight: bold;">
+                        Seus Dados + Algoritmo Preditivo + Modificação de Comportamento = Lucro Exponencial
+                    </p>
+
+                    <div class="destaque">
+                        <h3>O Novo Jogo:</h3>
+                        <p>🚗 Uber: maior "empresa de táxi" sem carros</p>
+                        <p>🏨 Airbnb: maior "rede de hotéis" sem imóveis</p>
+                        <p>🛒 Amazon: maior "varejista" com poucas lojas</p>
+                        <p><strong>Você trabalha de graça</strong> toda vez que posta, curte ou compartilha</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sintese">
+                <h2>🎯 Síntese Magistral: O Quadro Comparativo</h2>
+                
+                <div class="tabela-comparativa">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>DIMENSÃO</th>
+                                <th>1.0</th>
+                                <th>2.0</th>
+                                <th>3.0</th>
+                                <th>4.0</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Fonte de Valor</strong></td>
+                                <td>Produto físico</td>
+                                <td>Escala produtiva</td>
+                                <td>Rede global</td>
+                                <td>Dado comportamental</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ativo Principal</strong></td>
+                                <td>Máquinas</td>
+                                <td>Organização</td>
+                                <td>Capital financeiro</td>
+                                <td>Algoritmo</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Relação de Trabalho</strong></td>
+                                <td>Operário fabril</td>
+                                <td>Empregado CLT</td>
+                                <td>Terceirizado</td>
+                                <td>Autônomo/PJ</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tipo de Poder</strong></td>
+                                <td>Industrial</td>
+                                <td>Corporativo</td>
+                                <td>Financeiro</td>
+                                <td>Algorítmico</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Slogan</strong></td>
+                                <td>"Tempo é dinheiro"</td>
+                                <td>"Escala é poder"</td>
+                                <td>"Flexibilidade é chave"</td>
+                                <td>"Atenção é moeda"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Seu Papel</strong></td>
+                                <td>Trabalhador</td>
+                                <td>Consumidor</td>
+                                <td>Consumidor global</td>
+                                <td>Produto & Trabalhador</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <blockquote>
+                    <strong>INSIGHT CRUCIAL:</strong> Percebam a trajetória: no 1.0, você <strong>produzia</strong>. No 2.0, você <strong>consumia</strong>. No 3.0, você <strong>consumia globalmente</strong>. No 4.0, você <strong>produz dados enquanto consome sendo o produto</strong>. Entenderam a jogada?
+                </blockquote>
+            </section>
+
+            <section id="atividades">
+                <h2>🎮 Atividades Interativas Revolucionárias</h2>
+
+                <div class="atividade">
+                    <h4>ATIVIDADE 1: "Timeline Viva" - Versão Turbinada (8 min)</h4>
+                    <p><strong>Dinâmica:</strong></p>
+                    <ol>
+                        <li>Divida a sala em 4 zonas (1.0, 2.0, 3.0, 4.0)</li>
+                        <li>Projete imagens/situações na tela</li>
+                        <li>Alunos correm para a zona correspondente</li>
+                        <li>Equipe que acertar mais ganha</li>
+                    </ol>
+                    <p><strong>Casos para Decidir:</strong></p>
+                    <ul>
+                        <li><strong>Caso 1:</strong> "Uma criança trabalha 12h/dia numa mina de cobalto no Congo para extrair material para baterias de smartphones" → Resposta: Truque! É 1.0 (exploração brutal) acontecendo dentro do 4.0</li>
+                        <li><strong>Caso 2:</strong> "Você é 'parceiro' do iFood, trabalha 10h/dia, mas não tem férias nem FGTS" → Resposta: 4.0 puro (gig economy)</li>
+                        <li><strong>Caso 3:</strong> "A Volkswagen em 1970: 300 mil empregados, sindicato forte, cidade-fábrica" → Resposta: 2.0 clássico</li>
+                    </ul>
+                </div>
+
+                <div class="atividade">
+                    <h4>ATIVIDADE 2: "O Jogo dos Monopólios" (10 min)</h4>
+                    <p><strong>Missão:</strong> Cada grupo tem 5 minutos para
